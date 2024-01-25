@@ -1,3 +1,4 @@
+using TDDCsCities;
 namespace TestProject1
 {
     public class Tests
@@ -5,12 +6,21 @@ namespace TestProject1
         [SetUp]
         public void Setup()
         {
+            rechercheVille = new RechercheVille();
         }
 
         [Test]
-        public void Test1()
+        public void Rechercher_MoinsDeDeuxChar()
         {
-            Assert.Pass();
+            // Arrange
+            string mot = "a";
+
+            // Act
+            TestDelegate act = () => rechercheVille.Rechercher(mot);
+
+            // Assert
+            Assert.Throws<NotImplementedException>(act);
         }
+
     }
 }
