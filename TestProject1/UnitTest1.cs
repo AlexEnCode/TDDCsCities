@@ -3,10 +3,12 @@ namespace TestProject1
 {
     public class Tests
     {
+        private RechercheVille _rechercheVille;
+
         [SetUp]
         public void Setup()
         {
-            rechercheVille = new RechercheVille();
+            _rechercheVille = new RechercheVille();
         }
 
         [Test]
@@ -16,10 +18,10 @@ namespace TestProject1
             string mot = "a";
 
             // Act
-            TestDelegate act = () => rechercheVille.Rechercher(mot);
+            TestDelegate act = () => _rechercheVille.Rechercher(mot);
 
             // Assert
-            Assert.Throws<NotImplementedException>(act);
+            Assert.Throws<NotFoundException>(act, "Le texte de recherche doit avoir au moins 2 caractères.");
         }
 
     }
