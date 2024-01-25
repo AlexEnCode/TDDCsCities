@@ -62,5 +62,17 @@ namespace TestProject1
             // Assert
             CollectionAssert.AreEqual(new List<string> { "Budapest" }, result);
         }
+        [Test]
+        public void RechercherEtoilePourTout()
+        {
+            // Act
+            var result = _rechercheVille.Rechercher("*");
+
+            // Assert
+            CollectionAssert.AreEqual(new List<string> { "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne",
+            "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul" }, result);
+        }
+
+
     }
 }
