@@ -24,6 +24,10 @@ namespace TDDCsCities
 
         public List<String> Rechercher(String mot)
         {
+            if (mot == "*")
+            {
+                return _villes.ToList();
+            }
             if (mot.Length < 2)
             {
                 throw new NotFoundException("Le texte de recherche doit avoir au moins 2 caractères.");
