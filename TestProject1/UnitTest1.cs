@@ -21,7 +21,7 @@ namespace TestProject1
             TestDelegate act = () => _rechercheVille.Rechercher(mot);
 
             // Assert
-            Assert.Throws<NotFoundException>(act, "Le texte de recherche doit avoir au moins 2 caractères.");
+            Assert.Throws<NotFoundException>(act, "Le texte de recherche doit avoir au moins 2 caractÃ¨res.");
         }
 
     }
