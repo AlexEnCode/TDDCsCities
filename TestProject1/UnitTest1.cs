@@ -43,5 +43,14 @@ namespace TestProject1
             CollectionAssert.AreEqual(new List<string> { "Valence", "Vancouver" }, result);
         }
 
+        [Test]
+        public void RechercherInsensibleCasse()
+        {
+        // Act
+            var resultUpperCase = _rechercheVille.Rechercher("VA");
+
+            // Assert
+            CollectionAssert.AreEqual(new List<string> { "Valence", "Vancouver" }, resultUpperCase);
+        }
     }
 }
