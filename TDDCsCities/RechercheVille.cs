@@ -11,6 +11,17 @@ namespace TDDCsCities
     {
         private List<String> _villes;
 
+        List<string> villes = new List<string>
+        {
+            "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne",
+            "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+        };
+
+        public RechercheVille(List<string> villes)
+        {
+         _villes = villes;  
+        }
+
         public List<String> Rechercher(String mot)
         {
             if (mot.Length < 2)

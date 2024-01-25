@@ -8,7 +8,13 @@ namespace TestProject1
         [SetUp]
         public void Setup()
         {
-            _rechercheVille = new RechercheVille();
+            List<string> villes = new List<string>
+        {
+            "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne",
+            "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+        };
+            _rechercheVille = new RechercheVille(villes);
+
         }
 
         [Test]
@@ -22,6 +28,19 @@ namespace TestProject1
 
             // Assert
             Assert.Throws<NotFoundException>(act, "Le texte de recherche doit avoir au moins 2 caractères.");
+        }
+
+        [Test]
+        public void RechercherVillesPlusDexuChar()
+        {
+            // Arrange
+          string mot = "Va";
+
+            // Act
+            List<string> result = _rechercheVille.Rechercher(mot);
+
+            // Assert
+            CollectionAssert.AreEqual(new List<string> { "Valence", "Vancouver" }, result);
         }
 
     }
