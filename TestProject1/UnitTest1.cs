@@ -34,7 +34,7 @@ namespace TestProject1
         public void RechercherVillesPlusDexuChar()
         {
             // Arrange
-          string mot = "Va";
+            string mot = "Va";
 
             // Act
             List<string> result = _rechercheVille.Rechercher(mot);
@@ -46,11 +46,21 @@ namespace TestProject1
         [Test]
         public void RechercherInsensibleCasse()
         {
-        // Act
+            // Act
             var resultUpperCase = _rechercheVille.Rechercher("VA");
 
             // Assert
             CollectionAssert.AreEqual(new List<string> { "Valence", "Vancouver" }, resultUpperCase);
+        }
+
+        [Test]
+        public void RechercherTextePartiel()
+        {
+            // Act
+            var result = _rechercheVille.Rechercher("ape");
+
+            // Assert
+            CollectionAssert.AreEqual(new List<string> { "Budapest" }, result);
         }
     }
 }
