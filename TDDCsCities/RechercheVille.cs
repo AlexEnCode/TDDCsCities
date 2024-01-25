@@ -19,7 +19,7 @@ namespace TDDCsCities
 
         public RechercheVille(List<string> villes)
         {
-         _villes = villes;  
+            _villes = villes;
         }
 
         public List<String> Rechercher(String mot)
@@ -28,10 +28,12 @@ namespace TDDCsCities
             {
                 throw new NotFoundException("Le texte de recherche doit avoir au moins 2 caractères.");
             }
-            else
-            {
-                throw new NotImplementedException();
-            }
+
+            List<string> result = _villes
+                       .Where(ville => ville.IndexOf(mot, StringComparison.OrdinalIgnoreCase) != -1)
+                       .ToList();
+
+            return result;
         }
     }
 }
